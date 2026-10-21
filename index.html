@@ -225,6 +225,7 @@ if (window.navigation && window.self !== window.top) {
 				if(observer){observer.disconnect();}
 				try{
 				document.querySelectorAll('footer').forEach(function(footer){
+ if(!footer.querySelector('[data-photo-credits]')){var credit=document.createElement('a');credit.href='/photo-credits.html';credit.textContent='مصادر الصور التوضيحية';credit.setAttribute('data-photo-credits','');credit.style.cssText='display:block;text-align:center;font-size:12px;padding:12px';footer.appendChild(credit);}
 					var links=Array.from(footer.querySelectorAll('a')).filter(function(a){return /nasharhub\.com/i.test(a.href||'');});
 					if(links.length){
 						links.forEach(function(link){
